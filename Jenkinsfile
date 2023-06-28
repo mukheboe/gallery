@@ -4,10 +4,10 @@ pipeline {
 
   stages {
 
-    stage("Checkout"){
+    stage("Istall dependacies"){
 
       steps{
-        echo 'building application'
+        sh 'npm install'
       }
 
     }

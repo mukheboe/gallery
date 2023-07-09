@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage("Slack"){
             steps{
-                slackSend message: 'test message'
+                slackSend message: 'Build_1 Successful'
             }
         }
 
@@ -17,10 +17,10 @@ pipeline {
 
     }
 
-    stage("Build"){
+    stage("Build_1"){
 
       steps{
-        echo 'testing application'
+        echo 'Build Successful'
       }
 
     }

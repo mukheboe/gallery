@@ -3,6 +3,11 @@ pipeline {
   agent any
 
   stages {
+    stage("Slack"){
+            steps{
+                slackSend message: 'test message'
+            }
+        }
 
     stage("Istall dependacies"){
 
@@ -29,12 +34,4 @@ pipeline {
     }
 
   }
-   stages{
-        stage("Slack"){
-            steps{
-                slackSend message: 'test message'
-            }
-        }
-    }
-
 }

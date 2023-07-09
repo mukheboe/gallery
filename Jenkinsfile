@@ -29,5 +29,12 @@ pipeline {
     }
 
   }
+   post{
+        always("Slack"){
+            steps{
+                slackSend message: 'test message'
+            }
+        }
+    }
 
 }

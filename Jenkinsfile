@@ -29,8 +29,8 @@ pipeline {
     }
 
   }
-   post{
-        always("Slack"){
+   stages{
+        stage("Slack"){
             steps{
                 slackSend message: 'test message'
             }

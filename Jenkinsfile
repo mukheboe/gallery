@@ -2,7 +2,7 @@ pipeline {
 
   agent any
   tools{
-    npm install 'nodes'
+    npm install nodes
   }
   
   stages {

@@ -1,7 +1,7 @@
 pipeline {
 
   agent any
-  tnode {
+  node {
   def nodeHome = tool name: 'node-5.10.1', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
   sh "${nodeHome}/bin/node -v"
 }

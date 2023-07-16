@@ -9,23 +9,23 @@ pipeline {
             }
         }
 
-    stage("Istall dependacies"){
-
-      steps{
-        echo 'install dependacies'
-      }
-
-    }
-
     stage("Build_1"){
 
       steps{
-        echo 'Build Successful'
+        echo 'build successful'
       }
 
     }
 
-    stage("Deploy to Render"){
+    stage("Test stage"){
+
+      steps{
+        echo 'test Successful'
+      }
+
+    }
+
+    stage("Deploy stage"){
 
       steps{
         echo 'deploying application'

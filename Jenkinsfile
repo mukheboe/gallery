@@ -1,9 +1,8 @@
 pipeline {
 
   agent any
-  tools {
+
   tool 'node-5.10.1'
-}
   
   stages {
     stage("Slack"){

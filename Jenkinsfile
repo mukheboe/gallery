@@ -1,6 +1,9 @@
 pipeline {
 
   agent any
+  tools {
+    npm install 'nodes'
+  }
 
   stages {
     stage("Slack"){
@@ -9,7 +12,7 @@ pipeline {
             }
         }
 
-    stage("Build_1"){
+    stage("Build_1 stage"){
 
       steps{
         echo 'build successful'
@@ -32,6 +35,13 @@ pipeline {
       }
 
     }
+    stage('Deploy to Heroku') {
+  steps {
+    withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
+      sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/mighty-earth-27385.git master'
+    }
+  }
+} 
 
   }
 }

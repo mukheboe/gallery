@@ -1,10 +1,7 @@
 pipeline {
 
   agent any
-  tools {
-    npm install 'nodes'
-  }
-
+  
   stages {
     stage("Slack"){
             steps{
